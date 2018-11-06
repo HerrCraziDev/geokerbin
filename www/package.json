@@ -14,6 +14,6 @@
     "ol": "^5.0.3"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.9.6"
+    "parcel-bundler": "latest"
   }
 }
