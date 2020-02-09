@@ -55,6 +55,6 @@ div#map-container
 
 @font-face
 {
-    src: url("fonts/big_noodle_titling.ttf");
+    src: url("../res/fonts/big_noodle_titling.ttf");
     font-family: 'BigNoodleTitling';
 }
