@@ -65,7 +65,7 @@ const map = new Map({
                     var z = coordinate[0] - 1;
                     var x = coordinate[1];
                     var y = coordinate[2] + Math.pow(2, z);
-                    var url = 'http://tiles-arii.herrcrazidev.tk/tiles/kerbin/sat/' + z + '/' + x + '/' + y + '.png';
+                    var url = 'http://tiles-arii.herrcrazi.tk/tiles/kerbin/sat/' + z + '/' + x + '/' + y + '.png';
 
                     return url;
                 },
@@ -74,10 +74,31 @@ const map = new Map({
             }),
            	//extent: eqrecExtent
         }),
+
+        new TileLayer({
+            source: new XYZ({
+                tileUrlFunction: function (coordinate) {
+
+                    if (coordinate === null) return undefined;
+
+                    // TMS Style URL
+                    var z = coordinate[0] - 1;
+                    var x = coordinate[1];
+                    var y = coordinate[2] + Math.pow(2, z);
+                    var url = 'http://tiles-arii.herrcrazi.tk/tiles/kerbin/biome/' + z + '/' + x + '/' + y + '.png';
+
+                    return url;
+                },
+                projection: offsetProj,
+                //extent: eqrecExtent
+            }),
+            opacity: 0.25
+            //extent: eqrecExtent
+        }),
         
         new ImageLayer({
         	source: new Static({
-        		url: 'http://tiles-arii.herrcrazidev.tk/raster/kp/borders.png',
+        		url: 'http://tiles-arii.herrcrazi.tk/raster/kp/borders.png',
         		projection: offsetProj, //'EPSG:4326',
         		imageExtent: [-227.8,-90+2,580,90+2-4],
 			    imageSize: [0,0,4700,2000]
@@ -95,10 +116,10 @@ const map = new Map({
     })
 });
 
-/*const graticule = new Graticule({
+const graticule = new Graticule({
 	map: map,
 	showLabels: false
-})*/
+})
 
 console.log(eqrecExtent);
 
