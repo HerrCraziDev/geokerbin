@@ -96,14 +96,14 @@ const map = new Map({
             //extent: eqrecExtent
         }),
         
-        new ImageLayer({
-        	source: new Static({
-        		url: 'http://tiles-arii.herrcrazi.tk/raster/kp/borders.png',
-        		projection: offsetProj, //'EPSG:4326',
-        		imageExtent: [-227.8,-90+2,580,90+2-4],
-			    imageSize: [0,0,4700,2000]
-        	}),
-        })
+        // new ImageLayer({
+        // 	source: new Static({
+        // 		url: 'http://tiles-arii.herrcrazi.tk/raster/kp/borders.png',
+        // 		projection: offsetProj, //'EPSG:4326',
+        // 		imageExtent: [-227.8,-90+2,580,90+2-4],
+		// 	    imageSize: [0,0,4700,2000]
+        // 	}),
+        // })
     ],
 
     view: new View({
