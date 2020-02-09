@@ -50,10 +50,10 @@ import Static from 'ol/source/ImageStatic';
 // console.log(offsetProj);
 console.log("Imported map.js")
 var map;
-const _tileserver = 'http://tiles-arii.herrcrazi.tk/tiles/'
+const _tileserver = 'http://tiles-arii.herrcrazi.tk/tiles/';
 
 export default {
-
+    
     createMap(outletID, tileserver)
     {
         if (tileserver) {
@@ -84,6 +84,10 @@ export default {
     
     getOLMap() {
         return map;
+    },
+    
+    getLayers() {
+        return map.getLayers();
     },
     
     addKerbalLayer(layerData, options) {

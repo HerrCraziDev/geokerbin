@@ -1,18 +1,12 @@
 <template>
     <div id="app">
         <header>
-            <h1>GeoKerbin</h1>
-            <span id="version">v0.3.0</span>
-
-            <div class="menu" id="menu">
-                <div class="menu-indicator-bar"></div>
-                <div class="menu-indicator-bar"></div>
-                <div class="menu-indicator-bar"></div>
+            <div>
+                <h1>GeoKerbin</h1>
+                <span id="version">v0.3.0</span>
             </div>
 
-            <aside class="sliding-menu hidden">
-                
-            </aside>
+            <LayersMenu></LayersMenu>
         </header>
 
         <Map></Map>
@@ -21,14 +15,22 @@
 
 <script>
 import Map from './components/Map';
+import LayersMenu from './components/LayersMenu';
 
 export default {
     components: {
-        Map
+        Map,
+        LayersMenu
     },
 }
 </script>
 
 <style>
+    header {
+        width: 100%;
 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 </style>
