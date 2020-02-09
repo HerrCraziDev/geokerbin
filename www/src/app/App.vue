@@ -6,7 +6,7 @@
                 <span id="version">v0.3.0</span>
             </div>
 
-            <LayersMenu></LayersMenu>
+            <LayersMenu v-bind:layers="layers"></LayersMenu>
         </header>
 
         <Map></Map>
@@ -14,6 +14,7 @@
 </template>
 
 <script>
+import OLMap from './lib/map';
 import Map from './components/Map';
 import LayersMenu from './components/LayersMenu';
 
@@ -22,6 +23,14 @@ export default {
         Map,
         LayersMenu
     },
+
+    data: () => ({
+        layers: []
+    }),
+
+    mounted() {
+        this.layers = OLMap.getLayers();
+    }
 }
 </script>
 

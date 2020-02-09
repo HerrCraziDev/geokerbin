@@ -11,7 +11,8 @@ export default {
     mounted() {
         console.log("map");
         Map.createMap('map-container')
-        Map.addKerbalLayer(Bodies.kerbin.sat)
+        Map.addKerbalLayer(Bodies.kerbin.sat, {id: 1, title: "Kerbin (terrain, true colors)"})
+        Map.addKerbalLayer(Bodies.kerbin.biome, {id: 2, title: "Kerbin (biomes)", opacity: 0.3})
     }
 }
 </script>

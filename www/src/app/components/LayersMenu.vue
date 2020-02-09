@@ -6,22 +6,37 @@
         <!-- <button class="icon-btn" id="menuToggle"><i class="material-icons">layers</i> Layers</button> -->
         <aside class="side-menu" :class="(shown) ? 'shown' : ''">
             <h2><v-icon dark>layers</v-icon> Layers</h2>
+
+            <ul id="layer-list">
+                <LayerItem v-for="layer in layers" v-bind:layer="layer" v-bind:key="layer.id"></LayerItem>
+            </ul>
         </aside>
     </div>
 
 </template>
 
 <script>
+import LayerItem from './LayerItem'
+
 export default {
+    components: {
+        LayerItem
+    },
+
+    props: {
+        layers: Array
+    },
+
     data: () => ({
-        shown: true
+        shown: true,
+        layer: {}
     }),
 
     methods: {
         toggle() {
             this.shown = !this.shown
         }
-    }
+    },
 
 }
 </script>
@@ -38,7 +53,7 @@ export default {
 
     padding: 1em;
 
-    background-color: #26292ed2;
+    background-color: #26292ee5;
     border-left: solid 1px #424242b9;
     opacity: 0;
 
