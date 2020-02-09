@@ -6,10 +6,38 @@
 
 export default {
     kerbin: {
-        biome: 'kerbin/biome/',
-        color: 'kerbin/color/',
-        sat: 'kerbin/sat/',
-        slope: 'kerbin/slope'
+        biome: {
+            title: 'Kerbin (biomes)',
+            layerIcon: 'images/body-kerbin.png',
+            url: 'kerbin/biome/',
+            type: 'biome',
+            body: 'Kerbin',
+            source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
+        },
+        color: {
+            title: 'Kerbin (topography)',
+            layerIcon: 'images/body-kerbin.png',
+            url: 'kerbin/color/',
+            type: 'color',
+            body: 'Kerbin',
+            source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
+        },
+        sat: {
+            title: 'Kerbin (surface, true colors)',
+            layerIcon: 'images/body-kerbin.png',
+            url: 'kerbin/sat/',
+            type: 'sat',
+            body: 'Kerbin',
+            source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
+        },
+        slope: {
+            title: 'Kerbin (surface slope)',
+            layerIcon: 'images/body-kerbin.png',
+            url: 'kerbin/slope/',
+            type: 'slope',
+            body: 'Kerbin',
+            source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
+        }
     },
     mun: {
         biome: 'mun/biome/',
