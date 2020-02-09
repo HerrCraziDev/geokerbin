@@ -70,7 +70,7 @@ export default {
                         var z = coordinate[0] - 1;
                         var x = coordinate[1];
                         var y = coordinate[2] + Math.pow(2, z);
-                        var url = _tileserver + layerData + z + '/' + x + '/' + y + '.png';
+                        var url = _tileserver + layerData.url + z + '/' + x + '/' + y + '.png';
 
                         return url;
                     },
@@ -78,6 +78,13 @@ export default {
                 })
             },
             ...defaultOptions,
+            ...{
+                title: layerData.title,
+                mapDataSource: layerData.source,
+                type: layerData.type,
+                body: layerData.body,
+                layerIcon: layerData.layerIcon
+            },
             ...options
         });        
         map.addLayer(layer)

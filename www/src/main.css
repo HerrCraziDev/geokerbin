@@ -32,7 +32,7 @@ header:hover
     background-color: #285cbd;
 }
 
-header h1
+header h1, header #version
 {
     display: inline;
     margin: 0;
