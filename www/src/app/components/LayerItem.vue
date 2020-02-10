@@ -1,12 +1,21 @@
 <template>
     <div class="layer-item-box">
-        <v-progress-linear class="layer-loading" dark indeterminate color="#285cbd"></v-progress-linear>
+        <v-progress-linear 
+            class="layer-loading" 
+            dark 
+            :indeterminate="indeterminate"
+            :active="isLoading"
+            :value="(tilesLoaded/tilesLoading) * 100"
+            color="#285cbd"
+        >
+        </v-progress-linear>
 
         <div class="layer-item">
             <img 
-            :src="layer.get('layerIcon')" 
-            :alt="layer.get('body') || 'ERROR'" 
-            class="layer-icon">
+                :src="layer.get('layerIcon')" 
+                :alt="layer.get('body') || 'ERROR'" 
+                class="layer-icon"
+            />
 
             <v-icon class="layer-toggle-visible" dark dense @click="toggleLayer">
                 {{(this.layer.getVisible()) ? 'visibility' : 'visibility_off'}}
@@ -34,8 +43,19 @@ export default {
     },
 
     data: () => ({
-        opacity: 0
+        opacity: 0,
+        indeterminate: false,
+        tilesLoading: 0,
+        tilesLoaded: 0,
+        isLoading: true
     }),
+
+    // computed: {
+    //     isLoading: function () {
+    //         if (this.tilesLoading > 0 && this.tilesLoading > this.tilesLoaded) return true
+    //         else return false
+    //     }
+    // },
 
     watch: {
         opacity: function (val) {
@@ -46,11 +66,39 @@ export default {
     mounted() {
         this.opacity = this.layer.getOpacity()
         console.log(this.layer.get('title'))
+
+        let source = this.layer.getSource()
+        source.on('tileloadstart', this.addLoading)
+        source.on('tileloadend', this.addLoaded)
+        source.on('tileloaderror', this.addLoaded)
     },
 
     methods: {
         toggleLayer() {
             this.layer.setVisible( !this.layer.getVisible() )
+        },
+
+        addLoading() {
+            this.tilesLoading++
+            // this.indeterminate = false
+            this.isLoading = true
+
+            console.log('<<<< loading: ' + this.tilesLoading)
+        },
+
+        addLoaded() {
+            this.tilesLoaded++;
+            console.log('>>>> loaded: ' + this.tilesLoaded + '/' + this.tilesLoading)
+
+            if (this.tilesLoaded >= this.tilesLoading) {
+                setTimeout(() => {
+                    this.isLoading = false
+                    setTimeout(() => {
+                        this.tilesLoading = 0
+                        this.tilesLoaded = 0
+                    }, 500);
+                }, 500)
+            }
         }
     }
 }
@@ -65,6 +113,8 @@ export default {
 
     border-radius: 4px;
     box-shadow: 1px 1px 5px #00000071;
+
+    overflow: hidden;
 }
 
 .layer-item {
