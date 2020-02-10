@@ -37,8 +37,8 @@ export default {
             view: new View({
                 center: [0, 0],
                 //extent: [0,-90,360,90],
-                zoom: 2.3,
-                minZoom: 1,
+                zoom: 3,
+                minZoom: 2.5,
                 maxZoom: 6,
                 projection: 'EPSG:4326'
             })
@@ -83,7 +83,8 @@ export default {
                 mapDataSource: layerData.source,
                 type: layerData.type,
                 body: layerData.body,
-                layerIcon: layerData.layerIcon
+                layerIcon: layerData.layerIcon,
+                tilesUrl: layerData.url
             },
             ...options
         });        

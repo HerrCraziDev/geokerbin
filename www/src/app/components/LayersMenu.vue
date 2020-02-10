@@ -48,7 +48,7 @@ export default {
     top: 0;
     z-index: -10;
 
-    width: 20%;
+    width: 22%;
     height: 100%;
 
     padding: 1em;
