@@ -3,7 +3,7 @@
         <v-btn dark icon small>
             <v-icon dark @click="toggle">{{(shown) ? 'close' : 'menu'}}</v-icon>
         </v-btn>
-        <!-- <button class="icon-btn" id="menuToggle"><i class="material-icons">layers</i> Layers</button> -->
+
         <aside class="side-menu" :class="(shown) ? 'shown' : ''">
             <h2><v-icon dark>layers</v-icon> Layers</h2>
 
