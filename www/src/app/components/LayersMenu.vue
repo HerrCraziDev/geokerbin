@@ -1,5 +1,17 @@
 <template>
     <div id="layersMenu">
+        <v-progress-linear 
+            class="layer-loading"
+            absolute top
+            height="2px"
+            dark 
+            :indeterminate="indeterminate"
+            :active="isLoading"
+            :value="(tilesLoaded/tilesLoading) * 100"
+            color="#285cbd"
+        >
+        </v-progress-linear>
+
         <v-btn dark icon small>
             <v-icon dark @click="toggle">{{(shown) ? 'close' : 'menu'}}</v-icon>
         </v-btn>
@@ -29,12 +41,39 @@ export default {
 
     data: () => ({
         shown: true,
-        layer: {}
+        layer: {},
+        indeterminate: true,
+        tilesLoading: 0,
+        tilesLoaded: 0,
+        isLoading: true
     }),
 
     methods: {
         toggle() {
             this.shown = !this.shown
+        },
+
+        addLoading() {
+            this.tilesLoading++
+            this.indeterminate = false
+            this.isLoading = true
+
+            console.log('<<<< loading: ' + this.tilesLoading)
+        },
+
+        addLoaded() {
+            this.tilesLoaded++;
+            console.log('>>>> loaded: ' + this.tilesLoaded + '/' + this.tilesLoading)
+
+            if (this.tilesLoaded >= this.tilesLoading) {
+                setTimeout(() => {
+                    this.isLoading = false
+                    setTimeout(() => {
+                        this.tilesLoading = 0
+                        this.tilesLoaded = 0
+                    }, 500);
+                }, 500)
+            }
         }
     },
 

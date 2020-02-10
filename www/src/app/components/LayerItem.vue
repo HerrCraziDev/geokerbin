@@ -50,13 +50,6 @@ export default {
         isLoading: true
     }),
 
-    // computed: {
-    //     isLoading: function () {
-    //         if (this.tilesLoading > 0 && this.tilesLoading > this.tilesLoaded) return true
-    //         else return false
-    //     }
-    // },
-
     watch: {
         opacity: function (val) {
             this.layer.setOpacity(val)
@@ -79,16 +72,15 @@ export default {
         },
 
         addLoading() {
+            this.$parent.addLoading()
             this.tilesLoading++
             // this.indeterminate = false
             this.isLoading = true
-
-            console.log('<<<< loading: ' + this.tilesLoading)
         },
 
         addLoaded() {
+            this.$parent.addLoaded()
             this.tilesLoaded++;
-            console.log('>>>> loaded: ' + this.tilesLoaded + '/' + this.tilesLoading)
 
             if (this.tilesLoaded >= this.tilesLoading) {
                 setTimeout(() => {
