@@ -13,7 +13,7 @@ export default {
         Map.createMap('map-container')
         Map.addKerbalLayer(Bodies.kerbin.sat, {id: 1})
         Map.addKerbalLayer(Bodies.kerbin.biome, {id: 2, opacity: 0.3})
-        Map.addKerbalLayer(Bodies.laythe.sat, {id: 3, opacity: 0.2})
+        Map.addKerbalLayer(Bodies.laythe.sat, {id: 3, opacity: 0.2, visible: false})
     }
 }
 </script>

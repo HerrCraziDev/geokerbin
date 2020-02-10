@@ -47,7 +47,7 @@ export default {
         indeterminate: false,
         tilesLoading: 0,
         tilesLoaded: 0,
-        isLoading: true
+        isLoading: false
     }),
 
     watch: {

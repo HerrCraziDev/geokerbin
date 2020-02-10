@@ -40,7 +40,7 @@ export default {
     },
 
     data: () => ({
-        shown: true,
+        shown: false,
         layer: {},
         indeterminate: true,
         tilesLoading: 0,
@@ -58,12 +58,12 @@ export default {
             this.indeterminate = false
             this.isLoading = true
 
-            console.log('<<<< loading: ' + this.tilesLoading)
+            // console.log('<<<< loading: ' + this.tilesLoading)
         },
 
         addLoaded() {
             this.tilesLoaded++;
-            console.log('>>>> loaded: ' + this.tilesLoaded + '/' + this.tilesLoading)
+            // console.log('>>>> loaded: ' + this.tilesLoaded + '/' + this.tilesLoading)
 
             if (this.tilesLoaded >= this.tilesLoading) {
                 setTimeout(() => {
