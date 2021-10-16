@@ -3,3 +3,15 @@ www/node_modules/
 www/.cache/
 www/dist/
 www/demo/
+test.png
+**/test.png
+**/venv
+**/env
+env
+venv
+.vscode
+*.swp
+**/yarn.lock
+**/package-lock.json
+**/yarn-error.log
+*.pyc
