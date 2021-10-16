@@ -37,9 +37,11 @@
 </template>
 
 <script>
+import Layer from 'ol/layer/Layer';
+
 export default {
     props: {
-        layer: Object
+        layer: Layer
     },
 
     data: () => ({
