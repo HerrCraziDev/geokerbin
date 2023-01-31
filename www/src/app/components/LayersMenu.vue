@@ -12,7 +12,7 @@
         >
         </v-progress-linear>
 
-        <v-btn dark icon small>
+        <v-btn style="z-index: 10;" dark icon small>
             <v-icon dark @click="toggle">{{(shown) ? 'close' : 'menu'}}</v-icon>
         </v-btn>
 
@@ -85,18 +85,22 @@ export default {
     position: fixed;
     right: -20%;
     top: 0;
-    z-index: -10;
+    z-index: 1;
 
-    width: 22%;
+    width: 28rem;
     height: 100%;
 
     padding: 1em;
 
-    background-color: #26292ee5;
-    border-left: solid 1px #424242b9;
+    background-color: #26292ead;
+    border-left: solid 1px #ffffff0e;
     opacity: 0;
 
-    transition: all ease-out .2s;
+    backdrop-filter: blur(10px);
+    transition: all .2s ease-out , visibility 0s step-start .2s;
+
+    pointer-events: none;
+    visibility: hidden;
 }
 
 .side-menu h2 {
@@ -108,8 +112,14 @@ export default {
 .side-menu.shown {
     left: initial;
     right: 0;
-    box-shadow: 0 0 30px #161616a9, 0 0 15px #161616b9;
+    box-shadow: 0 0 30px #16161686, 0 0 15px #1616169d;
+    pointer-events: all;
+    visibility: visible;
+    transition: all .1s ease-out , visibility 0s step-start 0s;
     opacity: 1;
 }
 
+.btn-close {
+    z-index: 10;
+}
 </style>
