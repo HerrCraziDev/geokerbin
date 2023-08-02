@@ -9,6 +9,9 @@ import { get as getProjection } from "ol/proj";
 import OSM from "ol/source/OSM";
 import XYZ from "ol/source/XYZ";
 import Graticule from "ol/layer/Graticule";
+import Stroke from 'ol/style/Stroke';
+import Fill from 'ol/style/Fill';
+import Text from 'ol/style/Text';
 
 
 console.log("Imported map.js")
@@ -49,10 +52,28 @@ export default {
             })
         })
 
+        const graticuleLabelStyle = {
+            font: '10px Calibri,sans-serif',
+            fill: new Fill({
+                color: 'rgba(255,255,255,1)'
+            }),
+            stroke: new Stroke({
+                color: 'rgba(0,0,0,0.5)',
+                width: 3
+            })
+        };
         const graticule = new Graticule({
             map: map,
             showLabels: true,
-            wrapX: true
+            wrapX: true,
+            lonLabelStyle: new Text({
+                ...graticuleLabelStyle,
+                textBaseline: 'bottom'
+            }),
+            latLabelStyle: new Text({
+                ...graticuleLabelStyle,
+                textAlign: 'end'
+            }),
         })
     },
     
