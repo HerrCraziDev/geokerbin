@@ -14,7 +14,7 @@ class TileImporter:
                  tiles_h: int = None,
                  tile_size: int = 256,
                  zoom_levels=[],
-                 auto_levels: bool = True
+                 auto_levels: bool = True,
                 ):
 
         if not tiles_w:
@@ -34,7 +34,6 @@ class TileImporter:
         self.zoom_levels = zoom_levels
         self.auto_levels = auto_levels
 
-
         if (not self.atlas_h): 
             self.atlas_h = math.ceil(self.atlas_w / 2)
             print("[TileImporter] 'atlas_h' not set, using half of atlas width.")
@@ -52,11 +51,21 @@ class TileImporter:
 
     def load_tiles(self, path):
         self.source_path = path
-        files = [os.path.join(path, file) for file in os.listdir(path) if os.path.isfile(os.path.join(path, file)) and file.endswith("png")]
-        print(f"[TileImporter] {len(files)} tiles found")
+        files = [""] * (self.tiles_w * self.tiles_h)
 
-        if (len(files) != (self.tiles_w * self.tiles_h)):
-            print(f"[TileImporter] WARN Expected {self.tiles_w * self.tiles_h} tiles, found {len(files)}")
+        # List all tiles in dir
+        c = 0
+        for file in os.listdir(path):
+            if os.path.isfile(os.path.join(path, file)) and file.endswith("png"):
+                # Files are not in order, but tiles are numbered 'Tile<N>.png'
+                idx = int(file[4:-4])
+                files[idx] = os.path.join(path, file)
+                c += 1
+        
+        print(f"[TileImporter] {c} tiles found")
+
+        if (c != (self.tiles_w * self.tiles_h)):
+            print(f"[TileImporter] WARN Expected {self.tiles_w * self.tiles_h} tiles, found {c}")
 
         return Atlas(width=self.atlas_w, height=self.atlas_h, tile_size=self.tile_size, tiles=files)
     
