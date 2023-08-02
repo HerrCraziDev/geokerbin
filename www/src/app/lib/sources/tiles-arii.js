@@ -1,39 +1,44 @@
 
 
 /**
- * Tile sources for each celestial body
+ * Tiles from the original KerbalMaps
  */
 
 export default {
+    global: {
+        tileserver: "http://tiles-arii.gis.kerbalpowers.org/",
+        maxZoom: 5,
+    },
+
     kerbin: {
         biome: {
             title: 'Kerbin (biomes)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-kerbin.png',
-            url: 'kerbin/biome/',
+            layerIcon: 'images/body-kerbin.png',
+            url: 'tiles/kerbin/biome/',
             type: 'biome',
             body: 'Kerbin',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
         },
         color: {
             title: 'Kerbin (topography)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-kerbin.png',
-            url: 'kerbin/color/',
+            layerIcon: 'images/body-kerbin.png',
+            url: 'tiles/kerbin/color/',
             type: 'color',
             body: 'Kerbin',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
         },
         sat: {
             title: 'Kerbin (surface, true colors)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-kerbin.png',
-            url: 'kerbin/sat/',
+            layerIcon: 'images/body-kerbin.png',
+            url: 'tiles/kerbin/sat/',
             type: 'sat',
             body: 'Kerbin',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
         },
         slope: {
             title: 'Kerbin (surface slope)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-kerbin.png',
-            url: 'kerbin/slope/',
+            layerIcon: 'images/body-kerbin.png',
+            url: 'tiles/kerbin/slope/',
             type: 'slope',
             body: 'Kerbin',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
@@ -43,32 +48,32 @@ export default {
     mun: {
         biome: {
             title: 'Mun (biomes)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-mun.png',
-            url: 'mun/biome/',
+            layerIcon: 'images/body-mun.png',
+            url: 'tiles/mun/biome/',
             type: 'biome',
             body: 'Mun',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
         },
         color: {
             title: 'Mun (topography)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-mun.png',
-            url: 'mun/color/',
+            layerIcon: 'images/body-mun.png',
+            url: 'tiles/mun/color/',
             type: 'color',
             body: 'Mun',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
         },
         sat: {
             title: 'Mun (surface, true colors)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-mun.png',
-            url: 'mun/sat/',
+            layerIcon: 'images/body-mun.png',
+            url: 'tiles/mun/sat/',
             type: 'sat',
             body: 'Mun',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
         },
         slope: {
             title: 'Mun (surface slope)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-mun.png',
-            url: 'mun/slope/',
+            layerIcon: 'images/body-mun.png',
+            url: 'tiles/mun/slope/',
             type: 'slope',
             body: 'Mun',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
@@ -78,32 +83,32 @@ export default {
     minmus: {
         biome: {
             title: 'Minmus (biomes)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-minmus.png',
-            url: 'minmus/biome/',
+            layerIcon: 'images/body-minmus.png',
+            url: 'tiles/minmus/biome/',
             type: 'biome',
             body: 'Minmus',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
         },
         color: {
             title: 'Minmus (topography)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-minmus.png',
-            url: 'minmus/color/',
+            layerIcon: 'images/body-minmus.png',
+            url: 'tiles/minmus/color/',
             type: 'color',
             body: 'Minmus',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
         },
         sat: {
             title: 'Minmus (surface, true colors)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-minmus.png',
-            url: 'minmus/sat/',
+            layerIcon: 'images/body-minmus.png',
+            url: 'tiles/minmus/sat/',
             type: 'sat',
             body: 'Minmus',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
         },
         slope: {
             title: 'Minmus (surface slope)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-minmus.png',
-            url: 'minmus/slope/',
+            layerIcon: 'images/body-minmus.png',
+            url: 'tiles/minmus/slope/',
             type: 'slope',
             body: 'Minmus',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
@@ -113,32 +118,32 @@ export default {
     moho: {
         biome: {
             title: 'Moho (biomes)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-moho.png',
-            url: 'moho/biome/',
+            layerIcon: 'images/body-moho.png',
+            url: 'tiles/moho/biome/',
             type: 'biome',
             body: 'Moho',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
         },
         color: {
             title: 'Moho (topography)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-moho.png',
-            url: 'moho/color/',
+            layerIcon: 'images/body-moho.png',
+            url: 'tiles/moho/color/',
             type: 'color',
             body: 'Moho',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
         },
         sat: {
             title: 'Moho (surface, true colors)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-moho.png',
-            url: 'moho/sat/',
+            layerIcon: 'images/body-moho.png',
+            url: 'tiles/moho/sat/',
             type: 'sat',
             body: 'Moho',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
         },
         slope: {
             title: 'Moho (surface slope)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-moho.png',
-            url: 'moho/slope/',
+            layerIcon: 'images/body-moho.png',
+            url: 'tiles/moho/slope/',
             type: 'slope',
             body: 'Moho',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
@@ -148,32 +153,32 @@ export default {
     eve: {
         biome: {
             title: 'Eve (biomes)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-eve.png',
-            url: 'eve/biome/',
+            layerIcon: 'images/body-eve.png',
+            url: 'tiles/eve/biome/',
             type: 'biome',
             body: 'eve',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
         },
         color: {
             title: 'Eve (topography)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-eve.png',
-            url: 'eve/color/',
+            layerIcon: 'images/body-eve.png',
+            url: 'tiles/eve/color/',
             type: 'color',
             body: 'eve',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
         },
         sat: {
             title: 'Eve (surface, true colors)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-eve.png',
-            url: 'eve/sat/',
+            layerIcon: 'images/body-eve.png',
+            url: 'tiles/eve/sat/',
             type: 'sat',
             body: 'eve',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
         },
         slope: {
             title: 'Eve (surface slope)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-eve.png',
-            url: 'eve/slope/',
+            layerIcon: 'images/body-eve.png',
+            url: 'tiles/eve/slope/',
             type: 'slope',
             body: 'eve',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
@@ -183,32 +188,32 @@ export default {
     gilly: {
         biome: {
             title: 'Gilly (biomes)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-gilly.png',
-            url: 'gilly/biome/',
+            layerIcon: 'images/body-gilly.png',
+            url: 'tiles/gilly/biome/',
             type: 'biome',
             body: 'gilly',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
         },
         color: {
             title: 'Gilly (topography)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-gilly.png',
-            url: 'gilly/color/',
+            layerIcon: 'images/body-gilly.png',
+            url: 'tiles/gilly/color/',
             type: 'color',
             body: 'gilly',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
         },
         sat: {
             title: 'Gilly (surface, true colors)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-gilly.png',
-            url: 'gilly/sat/',
+            layerIcon: 'images/body-gilly.png',
+            url: 'tiles/gilly/sat/',
             type: 'sat',
             body: 'gilly',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
         },
         slope: {
             title: 'Gilly (surface slope)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-gilly.png',
-            url: 'gilly/slope/',
+            layerIcon: 'images/body-gilly.png',
+            url: 'tiles/gilly/slope/',
             type: 'slope',
             body: 'gilly',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
@@ -218,32 +223,32 @@ export default {
     duna: {
         biome: {
             title: 'Duna (biomes)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-duna.png',
-            url: 'duna/biome/',
+            layerIcon: 'images/body-duna.png',
+            url: 'tiles/duna/biome/',
             type: 'biome',
             body: 'duna',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
         },
         color: {
             title: 'Duna (topography)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-duna.png',
-            url: 'duna/color/',
+            layerIcon: 'images/body-duna.png',
+            url: 'tiles/duna/color/',
             type: 'color',
             body: 'duna',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
         },
         sat: {
             title: 'Duna (surface, true colors)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-duna.png',
-            url: 'duna/sat/',
+            layerIcon: 'images/body-duna.png',
+            url: 'tiles/duna/sat/',
             type: 'sat',
             body: 'duna',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
         },
         slope: {
             title: 'Duna (surface slope)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-duna.png',
-            url: 'duna/slope/',
+            layerIcon: 'images/body-duna.png',
+            url: 'tiles/duna/slope/',
             type: 'slope',
             body: 'duna',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
@@ -253,32 +258,32 @@ export default {
     ike: {
         biome: {
             title: 'Ike (biomes)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-ike.png',
-            url: 'ike/biome/',
+            layerIcon: 'images/body-ike.png',
+            url: 'tiles/ike/biome/',
             type: 'biome',
             body: 'ike',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
         },
         color: {
             title: 'Ike (topography)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-ike.png',
-            url: 'ike/color/',
+            layerIcon: 'images/body-ike.png',
+            url: 'tiles/ike/color/',
             type: 'color',
             body: 'ike',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
         },
         sat: {
             title: 'Ike (surface, true colors)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-ike.png',
-            url: 'ike/sat/',
+            layerIcon: 'images/body-ike.png',
+            url: 'tiles/ike/sat/',
             type: 'sat',
             body: 'ike',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
         },
         slope: {
             title: 'Ike (surface slope)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-ike.png',
-            url: 'ike/slope/',
+            layerIcon: 'images/body-ike.png',
+            url: 'tiles/ike/slope/',
             type: 'slope',
             body: 'ike',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
@@ -288,32 +293,32 @@ export default {
     dres: {
         biome: {
             title: 'Dres (biomes)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-dres.png',
-            url: 'dres/biome/',
+            layerIcon: 'images/body-dres.png',
+            url: 'tiles/dres/biome/',
             type: 'biome',
             body: 'dres',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
         },
         color: {
             title: 'Dres (topography)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-dres.png',
-            url: 'dres/color/',
+            layerIcon: 'images/body-dres.png',
+            url: 'tiles/dres/color/',
             type: 'color',
             body: 'dres',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
         },
         sat: {
             title: 'Dres (surface, true colors)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-dres.png',
-            url: 'dres/sat/',
+            layerIcon: 'images/body-dres.png',
+            url: 'tiles/dres/sat/',
             type: 'sat',
             body: 'dres',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
         },
         slope: {
             title: 'Dres (surface slope)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-dres.png',
-            url: 'dres/slope/',
+            layerIcon: 'images/body-dres.png',
+            url: 'tiles/dres/slope/',
             type: 'slope',
             body: 'dres',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
@@ -323,32 +328,32 @@ export default {
     laythe: {
         biome: {
             title: 'Laythe (biomes)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-laythe.png',
-            url: 'laythe/biome/',
+            layerIcon: 'images/body-laythe.png',
+            url: 'tiles/laythe/biome/',
             type: 'biome',
             body: 'laythe',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
         },
         color: {
             title: 'Laythe (topography)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-laythe.png',
-            url: 'laythe/color/',
+            layerIcon: 'images/body-laythe.png',
+            url: 'tiles/laythe/color/',
             type: 'color',
             body: 'laythe',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
         },
         sat: {
             title: 'Laythe (surface, true colors)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-laythe.png',
-            url: 'laythe/sat/',
+            layerIcon: 'images/body-laythe.png',
+            url: 'tiles/laythe/sat/',
             type: 'sat',
             body: 'laythe',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
         },
         slope: {
             title: 'Laythe (surface slope)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-laythe.png',
-            url: 'laythe/slope/',
+            layerIcon: 'images/body-laythe.png',
+            url: 'tiles/laythe/slope/',
             type: 'slope',
             body: 'laythe',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
@@ -358,32 +363,32 @@ export default {
     pol: {
         biome: {
             title: 'Pol (biomes)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-pol.png',
-            url: 'pol/biome/',
+            layerIcon: 'images/body-pol.png',
+            url: 'tiles/pol/biome/',
             type: 'biome',
             body: 'pol',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
         },
         color: {
             title: 'Pol (topography)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-pol.png',
-            url: 'pol/color/',
+            layerIcon: 'images/body-pol.png',
+            url: 'tiles/pol/color/',
             type: 'color',
             body: 'pol',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
         },
         sat: {
             title: 'Pol (surface, true colors)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-pol.png',
-            url: 'pol/sat/',
+            layerIcon: 'images/body-pol.png',
+            url: 'tiles/pol/sat/',
             type: 'sat',
             body: 'pol',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
         },
         slope: {
             title: 'Pol (surface slope)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-pol.png',
-            url: 'pol/slope/',
+            layerIcon: 'images/body-pol.png',
+            url: 'tiles/pol/slope/',
             type: 'slope',
             body: 'pol',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
@@ -393,32 +398,32 @@ export default {
     bop: {
         biome: {
             title: 'Bop (biomes)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-bop.png',
-            url: 'bop/biome/',
+            layerIcon: 'images/body-bop.png',
+            url: 'tiles/bop/biome/',
             type: 'biome',
             body: 'bop',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
         },
         color: {
             title: 'Bop (topography)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-bop.png',
-            url: 'bop/color/',
+            layerIcon: 'images/body-bop.png',
+            url: 'tiles/bop/color/',
             type: 'color',
             body: 'bop',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
         },
         sat: {
             title: 'Bop (surface, true colors)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-bop.png',
-            url: 'bop/sat/',
+            layerIcon: 'images/body-bop.png',
+            url: 'tiles/bop/sat/',
             type: 'sat',
             body: 'bop',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
         },
         slope: {
             title: 'Bop (surface slope)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-bop.png',
-            url: 'bop/slope/',
+            layerIcon: 'images/body-bop.png',
+            url: 'tiles/bop/slope/',
             type: 'slope',
             body: 'bop',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
@@ -428,32 +433,32 @@ export default {
     tylo: {
         biome: {
             title: 'Tylo (biomes)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-tylo.png',
-            url: 'tylo/biome/',
+            layerIcon: 'images/body-tylo.png',
+            url: 'tiles/tylo/biome/',
             type: 'biome',
             body: 'tylo',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
         },
         color: {
             title: 'Tylo (topography)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-tylo.png',
-            url: 'tylo/color/',
+            layerIcon: 'images/body-tylo.png',
+            url: 'tiles/tylo/color/',
             type: 'color',
             body: 'tylo',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
         },
         sat: {
             title: 'Tylo (surface, true colors)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-tylo.png',
-            url: 'tylo/sat/',
+            layerIcon: 'images/body-tylo.png',
+            url: 'tiles/tylo/sat/',
             type: 'sat',
             body: 'tylo',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
         },
         slope: {
             title: 'Tylo (surface slope)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-tylo.png',
-            url: 'tylo/slope/',
+            layerIcon: 'images/body-tylo.png',
+            url: 'tiles/tylo/slope/',
             type: 'slope',
             body: 'tylo',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
@@ -463,32 +468,32 @@ export default {
     eeloo: {
         biome: {
             title: 'Eeloo (biomes)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-eeloo.png',
-            url: 'eeloo/biome/',
+            layerIcon: 'images/body-eeloo.png',
+            url: 'tiles/eeloo/biome/',
             type: 'biome',
             body: 'eeloo',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
         },
         color: {
             title: 'Eeloo (topography)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-eeloo.png',
-            url: 'eeloo/color/',
+            layerIcon: 'images/body-eeloo.png',
+            url: 'tiles/eeloo/color/',
             type: 'color',
             body: 'eeloo',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
         },
         sat: {
             title: 'Eeloo (surface, true colors)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-eeloo.png',
-            url: 'eeloo/sat/',
+            layerIcon: 'images/body-eeloo.png',
+            url: 'tiles/eeloo/sat/',
             type: 'sat',
             body: 'eeloo',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'
         },
         slope: {
             title: 'Eeloo (surface slope)',
-            layerIcon: 'http://tiles-arii.herrcrazi.tk/images/body-eeloo.png',
-            url: 'eeloo/slope/',
+            layerIcon: 'images/body-eeloo.png',
+            url: 'tiles/eeloo/slope/',
             type: 'slope',
             body: 'eeloo',
             source: 'Original map data © Joel Pedraza, lots of work by drew, ivansanchez and seanth - With permission by Malte Weyer (m.weyer@deringenieur.net) - Maintained by HerrCraziDev (herrcrazi@gmail.com)'

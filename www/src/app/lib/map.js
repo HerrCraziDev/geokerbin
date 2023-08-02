@@ -8,12 +8,12 @@ import Projection from "ol/proj/Projection";
 import { get as getProjection } from "ol/proj";
 import OSM from "ol/source/OSM";
 import XYZ from "ol/source/XYZ";
-import Graticule from "ol/Graticule";
+import Graticule from "ol/layer/Graticule";
 
 
 console.log("Imported map.js")
 var map;
-const _tileserver = 'http://tiles-arii.herrcrazi.tk/tiles/';
+const _tileserver = 'http://tiles-arii.gis.kerbalpowers.org/';
 const defaultOptions = {
     title: 'KSP Layer',
     opacity: 1,
@@ -31,22 +31,28 @@ export default {
         map = new OLMap({
             target: outletID,
             layers: [
-                
+                // new TileLayer({
+                //     className: 'multiply',
+                //     source: new OSM(),
+                // })
             ],
 
             view: new View({
                 center: [0, 0],
                 //extent: [0,-90,360,90],
                 zoom: 3,
-                minZoom: 2.5,
-                maxZoom: 6,
+                minZoom: 0.1,
+                maxZoom: 9,
+                multiWorld: true,
+                showFullExtent: true,
                 projection: 'EPSG:4326'
             })
         })
 
         const graticule = new Graticule({
             map: map,
-            showLabels: false
+            showLabels: true,
+            wrapX: true
         })
     },
     
@@ -58,7 +64,7 @@ export default {
         return map.getLayers().getArray();
     },
 
-    addKerbalLayer(layerData, options) {
+    addKerbalLayer(source, tileset, options) {
         let layer = new TileLayer({
             ...{
                 source: new XYZ({
@@ -67,28 +73,30 @@ export default {
                         if (coordinate === null) return undefined;
 
                         // TMS Style URL
-                        var z = coordinate[0] - 1;
+                        var z = Math.min(coordinate[0]-1, (tileset.maxZoom ?? source.global.maxZoom));
                         var x = coordinate[1];
-                        var y = coordinate[2] + Math.pow(2, z);
-                        var url = _tileserver + layerData.url + z + '/' + x + '/' + y + '.png';
+                        var y = (Math.pow(2, z)-1) - coordinate[2];
+                        var url = (tileset.tileserver ?? source.global.tileserver) + tileset.url + z + '/' + x + '/' + y + '.png';
 
                         return url;
                     },
                     projection: 'EPSG:4326',
-                })
+                }),
+                useInterimTilesOnError: true,
             },
             ...defaultOptions,
             ...{
-                title: layerData.title,
-                mapDataSource: layerData.source,
-                type: layerData.type,
-                body: layerData.body,
-                layerIcon: layerData.layerIcon,
-                tilesUrl: layerData.url
+                title: tileset.title,
+                mapDataSource: tileset.source,
+                type: tileset.type,
+                body: tileset.body,
+                layerIcon: tileset.layerIcon,
+                tilesUrl: tileset.url,
+                baseUrl: (tileset.tileserver ?? source.global.tileserver)
             },
-            ...options
-        });        
+            ...options,
+        });
+
         map.addLayer(layer)
-        
     }
 }
