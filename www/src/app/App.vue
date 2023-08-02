@@ -3,7 +3,7 @@
         <header>
             <div>
                 <h1>GeoKerbin</h1>
-                <span id="version">v0.3.0</span>
+                <span id="version">v0.4.5</span>
             </div>
 
             <LayersMenu v-bind:layers="layers"></LayersMenu>
@@ -36,7 +36,7 @@ export default {
 
 <style>
     header {
-        width: 100%;
+        /* width: 100%; */
 
         display: flex;
         justify-content: space-between;

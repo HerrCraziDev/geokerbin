@@ -1,26 +1,19 @@
 <template>
     <div id="layersMenu">
-        <v-progress-linear 
+        <progress
             class="layer-loading"
-            absolute top
-            height="2px"
-            dark 
+            :class="{hidden: !this.isLoading}"
             :indeterminate="indeterminate"
-            :active="isLoading"
             :value="(tilesLoaded/tilesLoading) * 100"
-            color="#285cbd"
         >
-        </v-progress-linear>
-
-        <v-btn style="z-index: 10;" dark icon small>
-            <v-icon dark @click="toggle">{{(shown) ? 'close' : 'menu'}}</v-icon>
-        </v-btn>
+        </progress>
+        <button class="side-menu-toggle" @click="toggle">{{(shown) ? 'close' : 'menu'}}</button>
 
         <aside class="side-menu" :class="(shown) ? 'shown' : ''">
-            <h2><v-icon dark>layers</v-icon> Layers</h2>
-
+            <h2><Icon outlined>layers</Icon>Layers</h2>
             <ul id="layer-list">
                 <LayerItem v-for="layer in layers" v-bind:layer="layer" v-bind:key="layer.id"></LayerItem>
+                <layer-add-item>
             </ul>
         </aside>
     </div>
@@ -28,11 +21,15 @@
 </template>
 
 <script>
-import LayerItem from './LayerItem'
+import LayerAddItem from './LayerAddItem.vue';
+import LayerItem from './LayerItem';
+import Icon from './UI/Icon.vue';
 
 export default {
     components: {
-        LayerItem
+        LayerItem,
+        Icon,
+        LayerAddItem
     },
 
     props: {
@@ -80,7 +77,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .side-menu {
     position: fixed;
     right: -20%;
@@ -104,7 +101,6 @@ export default {
 }
 
 .side-menu h2 {
-    font-family: 'Roboto';
     font-weight: bold;
     font-size: 1em;
 }
@@ -119,7 +115,26 @@ export default {
     opacity: 1;
 }
 
-.btn-close {
+.side-menu-toggle {
+    position: relative;
     z-index: 10;
+}
+
+.layer-loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transition: all 0.2s;
+}
+
+.layer-loading.hidden {
+    opacity: 0;
+}
+
+#layer-list {
+    padding: 0;
+    margin: 1em 0;
 }
 </style>

@@ -6,7 +6,12 @@ html, body
 
     overflow: hidden;
 
-    font-family: 'Roboto', 'Segoe UI', Helvetica, Arial, sans-serif;
+    font-family: 'Hanken Grotesk', 'Roboto', 'Segoe UI', Helvetica, Arial, sans-serif;
+    font-size: 12pt;
+}
+
+h2, h3, h4, h5 {
+    font-family: 'Roboto', 'Ubuntu', Helvetica, Arial, sans-serif;
 }
 
 header
@@ -82,6 +87,12 @@ button.material {
 
     box-shadow: 0 0 5px black;
 }
+
+progress {
+    border-radius: 0;
+    border: none;
+}
+
 @font-face
 {
     src: url("../res/fonts/big_noodle_titling.ttf");

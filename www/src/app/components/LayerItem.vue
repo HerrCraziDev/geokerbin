@@ -1,29 +1,30 @@
 <template>
     <div class="layer-item-box">
-        <v-progress-linear 
-            class="layer-loading" 
-            dark 
+        <progress
+            class="layer-loading"
+            :class="(isLoading ? 'visible' : 'invisible')"
             :indeterminate="indeterminate"
-            :active="isLoading"
             :value="(tilesLoaded/tilesLoading) * 100"
-            color="#285cbd"
+            max="100"
         >
-        </v-progress-linear>
+        </progress>
 
         <div class="layer-item">
             <img 
-                :src="layer.get('layerIcon')" 
+                :src="layer.get('baseUrl') + layer.get('layerIcon')" 
                 :alt="layer.get('body') || 'ERROR'" 
                 class="layer-icon"
             />
 
-            <v-icon class="layer-toggle-visible" dark dense @click="toggleLayer">
-                {{(this.layer.getVisible()) ? 'visibility' : 'visibility_off'}}
-            </v-icon>
+            <Button class="layer-toggle-visible" @click="toggleLayer">
+                <Icon>
+                    {{(this.layer.getVisible()) ? 'visibility' : 'visibility_off'}}
+                </Icon>
+            </Button>
 
-            <v-icon class="layer-delete" dark dense>delete_forever</v-icon>
+            <Button class="layer-delete"><Icon>delete</Icon></Button>
 
-            <v-icon class="layer-edit" dark dense>settings</v-icon>
+            <Button class="layer-edit"><Icon>settings</Icon></Button>
 
             <h3>{{layer.get('title')}}</h3>
 
@@ -38,8 +39,15 @@
 
 <script>
 import Layer from 'ol/layer/Layer';
+import Icon from './UI/Icon.vue';
+import Button from './UI/Button.vue';
 
 export default {
+    components: {
+        Icon,
+        Button
+    },
+    
     props: {
         layer: Layer
     },
@@ -54,7 +62,7 @@ export default {
 
     watch: {
         opacity: function (val) {
-            this.layer.setOpacity(val)
+            this.layer.setOpacity(parseFloat(val))
         }
     },
 
@@ -70,6 +78,7 @@ export default {
 
     methods: {
         toggleLayer() {
+            console.log("Toggle layer" , this.layer)
             this.layer.setVisible( !this.layer.getVisible() )
         },
 
@@ -100,22 +109,24 @@ export default {
 
 <style>
 .layer-item-box {
-    margin: 1em 0;
-    background-color: #424242d3;
-
+    position: relative;
+    overflow: hidden;
     clear: both;
 
-    border-radius: 4px;
+    margin: 1em 0;
+    
+    background-color: #42424288;
+    border-radius: 5px;
     box-shadow: 1px 1px 5px #00000071;
 
-    overflow: hidden;
+    font-size: 12px;
 }
 
 .layer-item {
     display: grid;
     grid-template-columns: 3em 2em auto 1.5em 1em;
     grid-column-gap: .3em;
-    grid-template-rows: 1em 1em auto;
+    grid-template-rows: fit-content 1em auto;
     grid-row-gap: .2em;
 
     /* align-items: center; */
@@ -126,6 +137,7 @@ export default {
 .layer-item h3 {
     grid-area: 1 / 3 / 2 / 4;
     font-size: 1em;
+    margin: 0;
 }
 
 .layer-item .opacity-slider {
@@ -136,8 +148,8 @@ export default {
 
 .layer-toggle-visible {
     grid-area: 1 / 2 / 2 / 3;
-    place-self: center right;
-    font-size: .7em;
+    place-self: center center;
+    /* font-size: .7em; */
 }
 
 .layer-edit {
@@ -164,5 +176,18 @@ export default {
     grid-area: 1 / 1 / 4 / 2;
     place-self: center;
     height: 3em;
+}
+
+.layer-loading {
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    margin-top: 0;
+    transition: all 0.2s;
+    background-color: #666;
+}
+
+.layer-loading.invisible {
+    opacity: 0;
 }
 </style>
