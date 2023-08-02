@@ -1,10 +1,13 @@
+
+
 import Vue from 'vue'
-import Vuetify from 'vuetify'
-import 'vuetify/dist/vuetify.min.css'
+import 'material-icons/iconfont/material-icons.css';
+// import Vuetify from 'vuetify'
+// import 'vuetify/dist/vuetify.min.css'
 import App from './app/App';
 
 Vue.config.productionTip = false
-Vue.use(Vuetify)
+// Vue.use(Vuetify)
 
 /* eslint-disable no-new */
 window.onload = function () {
