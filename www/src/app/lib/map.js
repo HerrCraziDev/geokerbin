@@ -25,8 +25,7 @@ const defaultOptions = {
 
 export default {
     
-    createMap(outletID, tileserver)
-    {
+    createMap(outletID, tileserver) {
         if (tileserver) {
             _tileserver = tileserver
         }
@@ -77,12 +76,30 @@ export default {
         })
     },
     
+    createMapPeek(layer, outletID) {
+        console.log("Created peek for " + outletID + ", layer: " + layer.get('tilesUrl'))
+        let peek = new OLMap({
+            layers: [
+                new TileLayer({
+                    source: layer.getSource(),
+                })
+            ],
+            target: outletID,
+            view: map.getView(),
+            controls: [],
+        });
+    },
+
     getOLMap() {
         return map;
     },
     
     getLayers() {
         return map.getLayers().getArray();
+    },
+
+    getView() {
+        return map.getView();
     },
 
     addKerbalLayer(source, tileset, options) {

@@ -9,6 +9,10 @@
         >
         </progress>
 
+        <div class="layer-map-peek">
+            <div class="map-peek" :id="'map-peek-'+layer.get('id')"></div>
+        </div>
+
         <div class="layer-item">
             <img 
                 :src="layer.get('baseUrl') + layer.get('layerIcon')" 
@@ -32,7 +36,7 @@
                 {{this.layer.get('body')}} » {{this.layer.get('type')}} (<i>{{this.layer.get('tilesUrl')}}</i> )
             </span>
 
-            <input class="opacity-slider" type="range" name="opacity" min="0" step="0.01" max="1" v-model="opacity">
+            <Slider class="opacity-slider" name="opacity" min="0" max="1" step="0.01" v-model="opacity"></Slider>
         </div>
     </div>
 </template>
@@ -41,11 +45,14 @@
 import Layer from 'ol/layer/Layer';
 import Icon from './UI/Icon.vue';
 import Button from './UI/Button.vue';
+import Map from '../lib/map';
+import Slider from './UI/Slider.vue';
 
 export default {
     components: {
         Icon,
-        Button
+        Button,
+        Slider,
     },
     
     props: {
@@ -74,6 +81,8 @@ export default {
         source.on('tileloadstart', this.addLoading)
         source.on('tileloadend', this.addLoaded)
         source.on('tileloaderror', this.addLoaded)
+
+        Map.createMapPeek(this.layer, 'map-peek-'+this.layer.get('id'))
     },
 
     methods: {
@@ -102,7 +111,7 @@ export default {
                     }, 500);
                 }, 500)
             }
-        }
+        },
     }
 }
 </script>
@@ -122,16 +131,52 @@ export default {
     font-size: 12px;
 }
 
+.layer-map-peek {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* background-color: red; */
+    z-index: 1;
+}
+
+.map-peek {
+    width: 100%;
+    height: 100%;
+}
+
 .layer-item {
+    position: relative;
+    z-index: 3;
     display: grid;
     grid-template-columns: 3em 2em auto 1.5em 1em;
     grid-column-gap: .3em;
-    grid-template-rows: fit-content 1em auto;
+    grid-template-rows: fit-content(2em) 1em auto;
     grid-row-gap: .2em;
 
-    /* align-items: center; */
-
     padding: 1em;
+    align-items: center;
+
+    background: linear-gradient(
+        to right,
+        #2226 40%,
+        #2224 60%,
+        transparent 100%
+    );
+}
+
+.layer-map-peek::before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    content: '';
+    backdrop-filter: blur(10px);
+    mask: linear-gradient(
+        to right,
+        black 40%,
+        #000000cc 60%,
+        transparent 100%
+    );
 }
 
 .layer-item h3 {
@@ -142,8 +187,9 @@ export default {
 
 .layer-item .opacity-slider {
     grid-area: 3 / 2 / 4 / 4;
+    margin: 0;
     margin-top: .5em;
-    margin-left: 1em;
+    margin-left: .4em;
 }
 
 .layer-toggle-visible {
@@ -166,8 +212,8 @@ export default {
 
 .layer-info {
     grid-area: 2 / 2 / 3 / 5;
-    color: grey;
-    margin-left: 1em;
+    color: #ddda;
+    margin-left: .4em;
     font-size: .9em;
     font-family: 'Roboto';
 }
@@ -176,6 +222,7 @@ export default {
     grid-area: 1 / 1 / 4 / 2;
     place-self: center;
     height: 3em;
+    margin-right: 0em;
 }
 
 .layer-loading {
