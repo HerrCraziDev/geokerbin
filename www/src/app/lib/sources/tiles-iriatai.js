@@ -18,7 +18,7 @@ export default {
             source: 'HerrCrazi (herrcrazi@gmail.com) - Map data courtesy of Kerbal Space Program'
         },
         elevation: {
-            title: 'Kerbin (topography)',
+            title: 'Kerbin (elevation)',
             layerIcon: '/images/body-kerbin.png',
             url: 'tiles/kerbin/elevation/',
             type: 'elevation',
@@ -34,7 +34,7 @@ export default {
             source: 'HerrCrazi (herrcrazi@gmail.com) - Map data courtesy of Kerbal Space Program'
         },
         sat: {
-            title: 'Kerbin 65K (surface, true colors)',
+            title: 'Kerbin 65K (terrain color)',
             layerIcon: '/images/body-kerbin.png',
             url: 'tiles/kerbin/terrain/',
             type: 'sat',
@@ -42,7 +42,7 @@ export default {
             source: 'HerrCrazi (herrcrazi@gmail.com) - Map data courtesy of Kerbal Space Program'
         },
         slope: {
-            title: 'Kerbin (surface slope)',
+            title: 'Kerbin (slope)',
             layerIcon: '/images/body-kerbin.png',
             url: 'tiles/kerbin/slope/',
             type: 'slope',
