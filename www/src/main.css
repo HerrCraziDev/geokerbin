@@ -58,6 +58,22 @@ header h1, header #version
     font-family: "BigNoodleTitling", Arial, Helvetica, sans-serif;
 }
 
+a {
+    color: #009ac0;
+}
+
+a:hover, a:focus {
+    color: #43d5fa;
+}
+
+a:visited {
+    color: #7350c5;
+}
+
+a:visited:hover, a:visited:focus {
+    color: #9472e4;
+}
+
 div#map-container
 {
     position: absolute;

@@ -18,6 +18,7 @@ export default {
 
 <style>
 .item-frame {
+    position: relative;
     height: 4em;
 
     display: flex;
@@ -27,5 +28,7 @@ export default {
     background-color: #4444;
     border-radius: 5px;
     border: dashed 2px #777;
+
+    margin: .5em 0;
 }
 </style>

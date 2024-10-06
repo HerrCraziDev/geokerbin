@@ -16,7 +16,8 @@ export default {
         Map.addKerbalLayer(Geokerbin, Geokerbin.kerbin.normal, { id: 1, visible: true, className: 'ovr' })
         Map.addKerbalLayer(Legacy, Legacy.kerbin.sat, { id: 2, opacity: 1, visible: false })
         Map.addKerbalLayer(Legacy, Legacy.kerbin.biome, {id: 3, opacity: 0.3, visible: false})
-        Map.addKerbalLayer(Legacy, Legacy.laythe.sat, {id: 4, opacity: 0.2, visible: false})
+        Map.addKerbalLayer(Legacy, Legacy.duna.sat, {id: 4, opacity: 1, visible: false})
+        Map.addKerbalLayer(Legacy, Legacy.laythe.sat, {id: 5, opacity: 0.2, visible: false})
     }
 }
 </script>

@@ -13,8 +13,9 @@
             <h2><Icon outlined>layers</Icon>Layers</h2>
             <ul id="layer-list">
                 <LayerItem v-for="layer in layers" v-bind:layer="layer" v-bind:key="layer.id"></LayerItem>
-                <layer-add-item>
+                <LayerAddItem></LayerAddItem>
             </ul>
+            <span id="credits">🄯 HerrCrazi, 2019-2024 - <a href="http://www.kerbalpowers.org">kerbalpowers.org</a></span>
         </aside>
     </div>
 
@@ -85,7 +86,8 @@ export default {
     z-index: 1;
 
     width: 28rem;
-    height: 100%;
+    height: calc(100% - 2em);
+    overflow: scroll;
 
     padding: 1em;
 
@@ -94,13 +96,19 @@ export default {
     opacity: 0;
 
     backdrop-filter: blur(10px);
-    transition: all .2s ease-out , visibility 0s step-start .2s;
+    transition: all .2s ease-in , visibility 0s step-start .2s;
 
     pointer-events: none;
     visibility: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
 }
 
 .side-menu h2 {
+    margin: 0;
     font-weight: bold;
     font-size: 1em;
 }
@@ -135,6 +143,17 @@ export default {
 
 #layer-list {
     padding: 0;
-    margin: 1em 0;
+    margin-top: 1em;
+}
+
+#credits {
+    width: 100%;
+    display: block;
+    text-align: center;
+
+    margin-top: auto;
+
+    font-size: .7em;
+    color: #aaa;
 }
 </style>
